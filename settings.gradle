@@ -1,0 +1,5 @@
+rootProject.name = 'mswi_project'
+include 'core'
+include 'jpa-repository'
+include 'rest-api'
+
