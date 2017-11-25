@@ -2,4 +2,7 @@ rootProject.name = 'mswi_project'
 include 'core'
 include 'jpa-repository'
 include 'rest-api'
+include 'jpa-port'
+include 'rest-port'
+include 'frontend'
 
