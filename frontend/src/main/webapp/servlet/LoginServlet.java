@@ -1,6 +1,7 @@
 package main.webapp.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 		//potem sie bedzie sprawdzac czy istnieje taki uzytkownik w BD
 		boolean zalogowanoPomyslnie = true;
 		if(zalogowanoPomyslnie){
-			response.sendRedirect(".");
+			response.sendRedirect("./jsp/wyborFormularza.jsp");
 		} else {
 			response.addHeader("B³¹d logowania", "B³¹d");
 			request.getRequestDispatcher("./jsp/login.jsp").include(request, response);
