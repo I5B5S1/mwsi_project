@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Pojazd;
+import model.Vehicle;
 
 /**
  * Servlet implementation class DodajPojazd
  */
-@WebServlet("/DodajPojazd")
-public class DodajPojazd extends HttpServlet {
+@WebServlet("/AddVehicle")
+public class AddVehicle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DodajPojazd() {
+    public AddVehicle() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,19 +29,19 @@ public class DodajPojazd extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Pojazd p = new Pojazd();
+		Vehicle p = new Vehicle();
 		p.setVin(request.getParameter("vin"));
-		p.setMarka(request.getParameter("marka"));
+		p.setBrand(request.getParameter("brand"));
 		p.setModel(request.getParameter("model"));
-		p.setGeneracja(request.getParameter("generacja"));
-		p.setTypnadwozia(request.getParameter("typnadwozia"));
-		p.setIloscmiejsc(Integer.parseInt(request.getParameter("iloscmiejsc")));
-		p.setPojemnoscsilnika(Integer.parseInt(request.getParameter("pojemnoscsilnika")));
-		p.setSeriakartypojazdu(request.getParameter("seriakartypojazdu"));
-		p.setNrkartypojazdu(request.getParameter("nrkartypojazdu"));
-		p.setMaxmasacalkowita(Integer.parseInt(request.getParameter("maxmasacalkowita")));
-		p.setMasawlasna(Integer.parseInt(request.getParameter("masawlasna")));
-		p.setLiczbaosi(Integer.parseInt(request.getParameter("liczbaosi")));
+		p.setGeneration(request.getParameter("generation"));
+		p.setBodyType(request.getParameter("bodyType"));
+		p.setAnountOfSeats(Integer.parseInt(request.getParameter("amountOfSeats")));
+		p.setEngineCapacity(Integer.parseInt(request.getParameter("power")));
+		p.setVehicleCardNumber(request.getParameter("vehicleCardSeries"));
+		p.setVehicleCardNumber(request.getParameter("vehicleCardNumber"));
+		p.setMaxTotalWeight(Integer.parseInt(request.getParameter("maxTotalWeight")));
+		p.setOwnWeight(Integer.parseInt(request.getParameter("ownWeight")));
+		p.setAxesAmount(Integer.parseInt(request.getParameter("ownWeight")));
 		// TODO przekazanie obiektu do bazy
 		// TODO poinformowanie o pomyslnym przebiegu dodania
 		response.sendRedirect("./jsp/wyborFormularza.jsp");

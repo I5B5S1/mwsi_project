@@ -10,7 +10,7 @@ import main.webapp.action.impl.form.GoHomeAction;
 import main.webapp.action.impl.form.GoLoginAction;
 import main.webapp.action.impl.logic.AddRegDateAction;
 import main.webapp.action.impl.logic.LoginAction;
-import main.webapp.action.impl.logic.TestAction;
+//import main.webapp.action.impl.logic.TestAction;
 
 
 public class ActionFactory {
@@ -19,7 +19,7 @@ public class ActionFactory {
 		actions.put("/login", new GoLoginAction());
 		actions.put("/loginCredentials", new LoginAction());
 		
-		actions.put("/test", new TestAction());
+		//actions.put("/test", new TestAction());
 		
 		actions.put("/home", new GoHomeAction());
 		

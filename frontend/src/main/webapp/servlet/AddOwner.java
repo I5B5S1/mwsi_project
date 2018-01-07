@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Wlasciciel;
+import model.Owner;
 
 /**
  * Servlet implementation class DodajWlasc
  */
-@WebServlet("/DodajWlasc")
-public class DodajWlasc extends HttpServlet {
+@WebServlet("/AddOwner")
+public class AddOwner extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DodajWlasc() {
+    public AddOwner() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,15 +37,15 @@ public class DodajWlasc extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Wlasciciel w = new Wlasciciel();
+		Owner w = new Owner();
 		w.setPesel(request.getParameter("pesel"));
-		w.setData(request.getParameter("data"));
-		w.setImie(request.getParameter("imie"));
-		w.setNazwisko(request.getParameter("nazwisko"));
-		w.setMiejscowosc(request.getParameter("miejscowosc"));
-		w.setUlica(request.getParameter("ulica"));
-		w.setNrbudynku(request.getParameter("nrbudynku"));
-		w.setNrlokalu(request.getParameter("nrlokalu"));
+		w.setBirthday(request.getParameter("birthday"));
+		w.setName(request.getParameter("name"));
+		w.setSurname(request.getParameter("surname"));
+		w.setTown(request.getParameter("town"));
+		w.setStreet(request.getParameter("street"));
+		w.setBuildingNumber(request.getParameter("buildingNumber"));
+		w.setHouseNumber(request.getParameter("houseNumber"));
 		w.setRegon(request.getParameter("regon"));
 		// TODO przekazanie obiektu do bazy
 		// TODO poinformowanie o pomyslnym przebiegu dodania

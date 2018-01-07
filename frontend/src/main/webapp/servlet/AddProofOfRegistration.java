@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Dowod;
+import model.ProofOfRegistration;
 
 /**
  * Servlet implementation class DodajDowod
  */
-@WebServlet("/DodajDowod")
-public class DodajDowod extends HttpServlet {
+@WebServlet("/AddProofOfRegistration")
+public class AddProofOfRegistration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DodajDowod() {
+    public AddProofOfRegistration() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,17 +28,17 @@ public class DodajDowod extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			Dowod d = new Dowod();
-			d.setNrrejestracyjny(request.getParameter("nrrejestracyjny"));
-			d.setSeria(request.getParameter("seria"));
-			d.setNumer(request.getParameter("numer"));
-			d.setOrganwydajacy(request.getParameter("organwydajacy"));
-			d.setDatarej(request.getParameter("datarej"));
-			d.setKrajrej(request.getParameter("krajrej"));
-			d.setDatapierrej(request.getParameter("datapierrej"));
-			d.setOkreswaznosci(request.getParameter("okreswaznosci"));
-			d.setDatabadania(request.getParameter("databadania"));
-			d.setDatanastbadania(request.getParameter("datanastbadania"));
+			ProofOfRegistration d = new ProofOfRegistration();
+			d.setRegistrationNumber(request.getParameter("registrationNumber"));
+			d.setSeries(request.getParameter("series"));
+			d.setNumber(request.getParameter("number"));
+			d.setIssuingAuthority(request.getParameter("issuingAuthority"));
+			d.setRegistrationDate(request.getParameter("registrationDate"));
+			d.setRegistrationCountry(request.getParameter("registrationCountry"));
+			d.setFirstRegistrationDate(request.getParameter("firstRegistrationDate"));
+			d.setExpireDate(request.getParameter("expireDate"));
+			d.setExaminationDate(request.getParameter("examinationDate"));
+			d.setNextExaminationDate(request.getParameter("nextExaminationDate"));
 			// TODO przekazanie obiektu do bazy
 			// TODO poinformowanie o pomyslnym przebiegu dodania
 			response.sendRedirect("./jsp/wyborFormularza.jsp");

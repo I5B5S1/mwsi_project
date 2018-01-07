@@ -11,13 +11,13 @@
 
 		<h1>Wybierz formularz który chcesz wypełnić</h1>
 		<p>
-			<a href="./formWlasciciel.jsp">Dodaj nowego właściciela</a>
+			<a href="./formOwner.jsp">Dodaj nowego właściciela</a>
 		</p>
 			<p>
-			<a href="./formDowod.jsp">Dodaj nowy dowód rejestracyjny</a>
+			<a href="./formProofOfRegistration.jsp">Dodaj nowy dowód rejestracyjny</a>
 		</p>
 			<p>
-			<a href="./formPojazd.jsp">Dodaj nowy pojazd</a>
+			<a href="./formVehicle.jsp">Dodaj nowy pojazd</a>
 		</p>
 	</div>
 </body>
