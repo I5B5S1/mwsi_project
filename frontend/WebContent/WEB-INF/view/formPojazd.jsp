@@ -15,15 +15,15 @@
 			Marka <br> <input type="text" name="marka" placeholder=""><br>
 			Model	<br> <input type="text" name="model" placeholder=""><br>
 			Generacja	<br> <input type="text" name="generacja" placeholder=""><br>
-			Typ nadwozia <br> <input type="text" name="typnadwozia" placeholder=""><br>
-			Ilość miejsc <br> <input type="text" name="iloscmiejsc" placeholder=""><br>
-			Pojemność silnika <br> <input type="text" name="pojemnoscsilnika" placeholder=""><br>
+            Typ nadwozia <br> <input type="text" name="typNadwozia" placeholder=""><br>
+            Ilość miejsc <br> <input type="text" name="iloscMiejsc" placeholder=""><br>
+            Pojemność silnika <br> <input type="text" name="pojemnoscSilnika" placeholder=""><br>
 			Moc<br> <input type="text" name="moc" placeholder=""><br>
-			Seria karty <br> <input type="text" name="seriakartypojazdu" placeholder=""><br>
+            Seria karty <br> <input type="text" name="seriaKartyPojazdu" placeholder=""><br>
 			Numer karty <br> <input type="text" name="nrkartypojazdu" placeholder=""><br>
-			Maksymalna masa całkowita <br> <input type="text" name="maxmasacalkowita" placeholder=""><br>
-			Masa własna <br> <input type="text" name="masawlasna" placeholder=""><br>	
-			Liczba osi<br> <input type="text" name="liczbaosi" placeholder=""><br>	
+            Maksymalna masa całkowita <br> <input type="text" name="maxMasaCalkowita" placeholder=""><br>
+            Masa własna <br> <input type="text" name="masaWlasna" placeholder=""><br>
+            Liczba osi<br> <input type="text" name="liczbaOsi" placeholder=""><br>
 			<input type="submit" value="Wyślij">
 		</form>
 	</div>

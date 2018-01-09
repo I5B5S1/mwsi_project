@@ -18,8 +18,8 @@
 			Adres<br>
 			Miejscowość <br> <input type="text" name="miejscowosc" placeholder="Warszawa"><br>
 			Ulica <br> <input type="text" name="ulica" placeholder="Wojska Polskiego"><br>
-			Numer budynku <br> <input type="text" name="nrbudynku" placeholder="1"><br>
-			Numer lokalu <br> <input type="text" name="nrlokalu" placeholder="2"><br>
+            Numer budynku <br> <input type="text" name="nrBudynku" placeholder="1"><br>
+            Numer lokalu <br> <input type="text" name="nrLokalu" placeholder="2"><br>
 			REGON <br> <input type="text" name="regon" placeholder=""><br>	
 			<input type="submit" value="Wyślij">
 		</form>
