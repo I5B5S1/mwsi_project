@@ -1,5 +1,5 @@
 package jpa.api;
 
 public interface DowodRepositoryApi {
-    void dodajDateBadaniaTechnicznego(String nrRejestracyjny, String dataBadania);
+    boolean dodajDateBadaniaTechnicznego(String nrRejestracyjny, String dataBadania);
 }

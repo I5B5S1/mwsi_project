@@ -1,0 +1,22 @@
+group 'wat.mwsi.jpa'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile 'org.hibernate:hibernate-entitymanager:5.2.12.Final'
+    compile 'mysql:mysql-connector-java:5.1.26'
+    //compile 'oracle:ojdbc6:11.2.0.3'
+    //compile group: 'ojdbc', name: 'ojdbc', version: '14'
+    compile 'org.springframework.data:spring-data-jpa:2.0.2.RELEASE'
+    compile 'org.springframework:spring-context:5.0.2.RELEASE'
+}

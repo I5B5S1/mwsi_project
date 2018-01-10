@@ -18,9 +18,8 @@ public class Main {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(JpaConfiguration.class);
         userService = context.getBean(UserService.class);
-
+        //System.out.println(userService.getUser("hihi"));
         dowodService = context.getBean(DowodService.class);
-
-        dowodService.dodajDateBadaniaTechnicznego("52345", "dupa");
+        System.out.println(dowodService.dodajDateBadaniaTechnicznego("98uiohio8900", "dupa"));
     }
 }

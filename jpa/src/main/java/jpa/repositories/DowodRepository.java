@@ -13,5 +13,5 @@ public interface DowodRepository extends JpaRepository<DowodEntity, String> {
     @Modifying
     @Transactional
     @Query("UPDATE DowodEntity SET dataBadania = :dataBadania WHERE nrRejestracyjny = :nrRejestracyjny")
-    void dodajDateRejestracji(@Param("nrRejestracyjny") String nrRejestracyjny, @Param("dataBadania") String dataBadania);
+    int dodajDateRejestracji(@Param("nrRejestracyjny") String nrRejestracyjny, @Param("dataBadania") String dataBadania);
 }

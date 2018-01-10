@@ -12,7 +12,10 @@ public class DowodService implements DowodRepositoryApi {
     private DowodRepository dowodRepository;
 
     @Override
-    public void dodajDateBadaniaTechnicznego(String nrRejestracyjny, String dataBadania) {
-        dowodRepository.dodajDateRejestracji(nrRejestracyjny, dataBadania);
+    public boolean dodajDateBadaniaTechnicznego(String nrRejestracyjny, String dataBadania) {
+        if (dowodRepository.dodajDateRejestracji(nrRejestracyjny, dataBadania) == 0)
+            return false;
+        else
+            return true;
     }
 }
