@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+body{
+	color:#00FF69;
+	background:black;
+	text-align: center;
+}
+a{
+	color:green;
+}
+a:hover{
+	color:yellow;
+	text-decoration:underline;
+	text-decoration-style: dotted;
+}

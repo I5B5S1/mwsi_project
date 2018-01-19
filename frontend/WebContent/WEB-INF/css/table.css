@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+body{
+	background:red;
+}
+table{
+	text-align:center;
+	border: 1px solid black ;
+}
