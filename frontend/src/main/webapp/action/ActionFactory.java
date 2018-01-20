@@ -10,10 +10,12 @@ import org.springframework.stereotype.Component;
 
 import main.webapp.action.impl.form.GoHomeAction;
 import main.webapp.action.impl.form.GoLoginAction;
+import main.webapp.action.impl.form.GoOwnerAction;
 import main.webapp.action.impl.form.GoRegistrationCertificateAction;
 import main.webapp.action.impl.form.GoVehicleFormAction;
 import main.webapp.action.impl.logic.AddRegistrationCertificateAction;
 import main.webapp.action.impl.logic.AddVehicleAction;
+import main.webapp.action.impl.logic.GetOwnerAction;
 import main.webapp.action.impl.logic.GetRegistrationCertificateAction;
 import main.webapp.action.impl.logic.GetVehicleAction;
 import main.webapp.action.impl.logic.LogOutAction;
@@ -29,7 +31,7 @@ public class ActionFactory {
 			LoginAction loginAction, GoHomeAction goHomeAction, GoRegistrationCertificateAction goRegistrationCertificateAction
 			,AddRegistrationCertificateAction addRegistrationCertificateAction, GetRegistrationCertificateAction getRegistrationCertificateAction
 			, GoVehicleFormAction goVehicleFormAction,GetVehicleAction getVehicleAction, AddVehicleAction addVehicleAction
-			,LogOutAction logOutAction){
+			,LogOutAction logOutAction, GoOwnerAction goOwnerAction, GetOwnerAction getOwnerAction){
 		actions.put("/login", goLoginAction);
 		actions.put("/loginCredentials", loginAction);
 		actions.put("/home", goHomeAction);
@@ -40,6 +42,8 @@ public class ActionFactory {
 		actions.put("/vehicleAction", getVehicleAction);
 		actions.put("/vehicleActionAdd", addVehicleAction);
 		actions.put("/logOut", logOutAction);
+		actions.put("/owner", goOwnerAction);
+		actions.put("/ownerAction", getOwnerAction);
 		
 	}
 	/*static{

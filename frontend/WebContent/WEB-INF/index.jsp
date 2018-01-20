@@ -27,6 +27,9 @@ div {
 				<div>
 					<a href="/CEPiK/pl/vehicle">Pojazdy</a>
 				</div>
+				<div>
+					<a href="/CEPiK/pl/owner">Wlasciciele</a>
+				</div>
 				<a href="/CEPiK/pl/logOut">Wyloguj się</a>
 			</c:otherwise>
 		</c:choose>
