@@ -15,11 +15,11 @@ import jpa.entities.WlascicielEntity;
 public interface WlascicielRepository extends JpaRepository<WlascicielEntity, String> {
 	@Transactional
 	@Query(value = "SELECT * FROM wlascicielEntity"
-			+ " WHERE   (pesel LIKE :pesel OR :pesel IS NULL) "
-			+ "AND (imie LIKE :imie OR :imie IS NULL)" + "AND (nazwisko LIKE :nazwisko OR :nazwisko IS NULL)"
-			+ "AND (dataUrodzenia LIKE :dataUrodzenia OR :dataUrodzenia IS NULL)"
-			+ "AND (miejscowosc LIKE :miejscowosc OR :miejscowosc IS NULL)" + "AND (ulica LIKE :ulica OR :ulica IS NULL)"
-			+ "AND (nrBudynku LIKE :nrBudynku OR :nrBudynku IS NULL)"
+			+ " WHERE   (pesel = :pesel OR :pesel IS NULL) "
+			+ "AND (imie = :imie OR :imie IS NULL)" + "AND (nazwisko = :nazwisko OR :nazwisko IS NULL)"
+			+ "AND (dataUrodzenia = :dataUrodzenia OR :dataUrodzenia IS NULL)"
+			+ "AND (miejscowosc = :miejscowosc OR :miejscowosc IS NULL)" + "AND (ulica = :ulica OR :ulica IS NULL)"
+			+ "AND (nrBudynku = :nrBudynku OR :nrBudynku IS NULL)"
 			+ "AND  (nrLokalu = :nrLokalu OR :nrLokalu IS NULL)"
 			+ "AND  (regon = :regon OR :regon IS NULL)", nativeQuery = true)
 	List<WlascicielEntity> pobierzWlascicieli(@Param("pesel") String pesel, @Param("imie") String imie,

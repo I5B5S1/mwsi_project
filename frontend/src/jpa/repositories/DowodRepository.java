@@ -16,11 +16,11 @@ public interface DowodRepository extends JpaRepository<DowodEntity, String> {
 
 	@Transactional
 	@Query(value = "SELECT * FROM dowodrejestracyjny"
-			+ " WHERE   (nrRejestracyjny LIKE :nrRejestracyjny OR :nrRejestracyjny IS NULL) "
-			+ "AND (seria LIKE :seria OR :seria IS NULL)" + "AND (numer LIKE :numer OR :numer IS NULL)"
-			+ "AND (organWydajacy LIKE :organWydajacy OR :organWydajacy IS NULL)"
-			+ "AND (dataRej LIKE :dataRej OR :dataRej IS NULL)" + "AND (krajRej LIKE :krajRej OR :krajRej IS NULL)"
-			+ "AND (DataPierRej LIKE :dataPierwszejRej OR :dataPierwszejRej IS NULL)"
+			+ " WHERE   (nrRejestracyjny = :nrRejestracyjny OR :nrRejestracyjny IS NULL) "
+			+ "AND (seria = :seria OR :seria IS NULL)" + "AND (numer = :numer OR :numer IS NULL)"
+			+ "AND (organWydajacy = :organWydajacy OR :organWydajacy IS NULL)"
+			+ "AND (dataRej = :dataRej OR :dataRej IS NULL)" + "AND (krajRej = :krajRej OR :krajRej IS NULL)"
+			+ "AND (DataPierRej = :dataPierwszejRej OR :dataPierwszejRej IS NULL)"
 			+ "AND  (okresWaznosci = :okresWaznosci OR :okresWaznosci IS NULL)"
 			+ "AND  (dataBadania = :dataBadania OR :dataBadania IS NULL)"
 			+ "AND  (dataNastBadania = :dataNastBadania OR :dataNastBadania IS NULL)"

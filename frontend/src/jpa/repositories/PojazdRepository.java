@@ -14,12 +14,12 @@ import jpa.entities.PojazdEntity;
 public interface PojazdRepository extends JpaRepository<PojazdEntity, String> {
 
 	@Transactional
-	@Query(value = "SELECT * FROM PojazdEntity" + " WHERE   (vin LIKE :vin OR :vin IS NULL) "
-			+ "AND (marka LIKE :marka OR :marka IS NULL)" + "AND (model LIKE :model OR :model IS NULL)"
-			+ "AND (generacja LIKE :generacja OR :generacja IS NULL)"
-			+ "AND (typNadwozia LIKE :typNadwozia OR :typNadwozia IS NULL)"
-			+ "AND (iloscMiejsc LIKE :iloscMiejsc OR :iloscMiejsc IS NULL)"
-			+ "AND (pojemnoscSilnika LIKE :pojemnoscSilnika OR :pojemnoscSilnika IS NULL)"
+	@Query(value = "SELECT * FROM PojazdEntity" + " WHERE   (vin = :vin OR :vin IS NULL) "
+			+ "AND (marka = :marka OR :marka IS NULL)" + "AND (model = :model OR :model IS NULL)"
+			+ "AND (generacja = :generacja OR :generacja IS NULL)"
+			+ "AND (typNadwozia = :typNadwozia OR :typNadwozia IS NULL)"
+			+ "AND (iloscMiejsc = :iloscMiejsc OR :iloscMiejsc IS NULL)"
+			+ "AND (pojemnoscSilnika = :pojemnoscSilnika OR :pojemnoscSilnika IS NULL)"
 			+ "AND  (moc = :moc OR :moc IS NULL)"
 			+ "AND  (seriaKartyPojazdu = :seriaKartyPojazdu OR :seriaKartyPojazdu IS NULL)"
 			+ "AND  (NrKartyPojazdu = :NrKartyPojazdu OR :NrKartyPojazdu IS NULL)"
