@@ -20,30 +20,18 @@ div {
 				<a href="/CEPiK/pl/login">Zaloguj się</a>
 			</c:when>
 			<c:otherwise>
-				<c:if test="${sessionScope.user.createPermission}">
-					<div>
-						Dodawanie:<br> <a href="/CEPiK/pl/registrationCertificate">Dowód
-							rejestracyjny: dodaj datę badania</a>
-					</div>
-				</c:if>
-				<c:if test="${sessionScope.user.readPermission}">
-					<div>
-						Wyszukiwanie:<br> <a href="/CEPiK/pl/vehicle">Wyszukaj pojazdy</a>
-					</div>
-
-				</c:if>
-				<c:if test="${sessionScope.user.updatePermission}">
-					<div>Modyfikacja:</div>
-				</c:if>
-				<c:if test="${sessionScope.user.deletePermission}">
-					<div>Usuwanie:</div>
-				</c:if>
-
-
-
+				<div>
+					<a href="/CEPiK/pl/registrationCertificate">Dowody
+						rejestracyjne</a>
+				</div>
+				<div>
+					<a href="/CEPiK/pl/vehicle">Pojazdy</a>
+				</div>
+				<a href="/CEPiK/pl/logOut">Wyloguj się</a>
 			</c:otherwise>
 		</c:choose>
 	</div>
+
 
 </body>
 </html>

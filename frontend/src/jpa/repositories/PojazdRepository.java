@@ -32,7 +32,7 @@ public interface PojazdRepository extends JpaRepository<PojazdEntity, String> {
 			+ "AND  (odnalezienieTablicRejestracyjnych = :odnalezienieTablicRejestracyjnych OR :odnalezienieTablicRejestracyjnych IS NULL)"
 			+ "AND  (utrataKartyPojazdu = :utrataKartyPojazdu OR :utrataKartyPojazdu IS NULL)"
 			+ "AND  (odnalezienieaKartyPojazdu = :odnalezienieaKartyPojazdu OR :odnalezienieaKartyPojazdu IS NULL)"
-			
+
 			, nativeQuery = true)
 	List<PojazdEntity> pobierzPojazdy(@Param("vin") String vin, @Param("marka") String marka,
 			@Param("model") String model, @Param("generacja") String generacja,
@@ -44,11 +44,7 @@ public interface PojazdRepository extends JpaRepository<PojazdEntity, String> {
 			@Param("kradziezPojazdu") String kradziezPojazdu, @Param("odnalezieniePojazdu") String odnalezieniePojazdu,
 			@Param("utrataTablicRejestracyjnych") String utrataTablicRejestracyjnych,
 			@Param("odnalezienieTablicRejestracyjnych") String odnalezienieTablicRejestracyjnych,
-			@Param("utrataKartyPojazdu") String utrataKartyPojazdu, @Param("odnalezienieaKartyPojazdu") String odnalezienieaKartyPojazdu);
-
-	@Transactional
-	@Query("UPDATE DowodEntity SET dataBadania = :dataBadania WHERE nrRejestracyjny = :nrRejestracyjny")
-	int dodajDateRejestracji(@Param("nrRejestracyjny") String nrRejestracyjny,
-			@Param("dataBadania") String dataBadania);
+			@Param("utrataKartyPojazdu") String utrataKartyPojazdu,
+			@Param("odnalezienieaKartyPojazdu") String odnalezienieaKartyPojazdu);
 
 }

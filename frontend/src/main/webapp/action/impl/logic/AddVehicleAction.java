@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Component;
 
@@ -28,9 +29,10 @@ public class AddVehicleAction implements Action {
 		try {
 			PojazdEntity pojazdEntity = VehicleFormExtractor.extractVehicle(request);
 			pojazdService.dodajPojazd(pojazdEntity);
+			request.setAttribute("positiveResult", "Pomyœlnie dodano nowy b¹dŸ zmodyfikowano istniej¹cy wpis");
 		} catch (ValidationException | NumberFormatException  e) {
 				request.setAttribute("validationError", "Wprowadzone dane nie przesz³y pomyœlnie walidacji!");
-		} catch (JpaSystemException e){
+		} catch (JpaSystemException | InvalidDataAccessApiUsageException e){
 			request.setAttribute("jpaError", "Dodanie nowego pojazdu nie powiod³o siê! Proszê pamiêtaæ o wprowadzeniu VINu");
 		}
 		return "vehicle";

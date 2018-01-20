@@ -2,13 +2,16 @@ package jpa.services;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
 import org.springframework.stereotype.Component;
 
 import jpa.api.PojazdRepositoryApi;
 import jpa.entities.PojazdEntity;
-import jpa.entities.UserEntity;
 import jpa.repositories.PojazdRepository;
+import main.webapp.utils.EntityUpdater;
 
 @Component
 public class PojazdService implements PojazdRepositoryApi {
@@ -32,10 +35,17 @@ public class PojazdService implements PojazdRepositoryApi {
 				kradziezPojazdu, odnalezieniePojazdu, utrataTablicRejestracyjnych, odnalezienieTablicRejestracyjnych,
 				utrataKartyPojazdu, odnalezienieaKartyPojazdu);
 	}
-	
-	 @Override
-	    public void dodajPojazd(PojazdEntity pojazdEntity) {
-	        pojazdRepository.save(pojazdEntity);
-	    }
+
+	@Override
+	public void dodajPojazd(PojazdEntity pojazdEntity) {
+		try {
+			PojazdEntity entityToUpdate = pojazdRepository.getOne(pojazdEntity.getVin());
+			EntityUpdater.updateEntity(entityToUpdate, pojazdEntity);
+			pojazdRepository.save(entityToUpdate);
+			
+		} catch (EntityNotFoundException | JpaObjectRetrievalFailureException e) {
+			pojazdRepository.save(pojazdEntity);
+		}
+	}
 
 }

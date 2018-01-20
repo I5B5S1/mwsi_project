@@ -8,9 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@SuppressWarnings("deprecation")
 @Entity
 @Proxy(lazy = false)
 @Table(name = "dowodrejestracyjny")
+@org.hibernate.annotations.Entity(
+		dynamicUpdate = true)
 public class DowodEntity {
 
     @Id
@@ -38,6 +41,7 @@ public class DowodEntity {
     private String utrataDowoduRejestracyjnego;
     @Column(name = "OdnalezienieDowoduRejestracyjnego")
     private String odnalezienieDowoduRejestracyjnego;
+    
     
 
     public String getNrRejestracyjny() {

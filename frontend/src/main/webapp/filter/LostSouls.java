@@ -1,10 +1,6 @@
 package main.webapp.filter;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,17 +11,16 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jpa.entities.UserEntity;
-
 /**
- * Servlet Filter implementation class AuthFilter
+ * Servlet Filter implementation class LostSouls
  */
-@WebFilter("/pl/*")
-public class AuthFilter implements Filter {
+@WebFilter("/*")
+public class LostSouls implements Filter {
 
-	List<String> publicPages = Arrays.asList(new String[] { "/login", "/loginCredentials" });
-
-	public AuthFilter() {
+	/**
+	 * Default constructor.
+	 */
+	public LostSouls() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -39,16 +34,15 @@ public class AuthFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		if (((HttpServletRequest) request).getSession().getAttribute("user") == null) {
-			if (publicPages.contains(((HttpServletRequest) request).getPathInfo())) {
-				chain.doFilter(request, response);
-			} else {
-				((HttpServletResponse) response).sendRedirect("/CEPiK/");
-			}
-		} else {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		// place your code here
+		String uri = ((HttpServletRequest) request).getRequestURI();
+		if (uri.startsWith("/CEPiK/pl") || uri.equals("/CEPiK/")
+				|| "/TableCreatorServlet".equals(((HttpServletRequest) request).getPathInfo())){
 			chain.doFilter(request, response);
+		} else{
+			((HttpServletResponse) response).sendRedirect("/CEPiK/");
 		}
 	}
 

@@ -27,7 +27,16 @@ public class VehicleFormExtractor {
 		Integer maxTotalWeight = map.get("maxTotalWeight") != null ? Integer.parseInt(map.get("maxTotalWeight")) : null;
 		Integer ownWeight = map.get("ownWeight") != null ? Integer.parseInt(map.get("ownWeight")) : null;
 		Integer axesNumber = map.get("axesNumber") != null ? Integer.parseInt(map.get("axesNumber")) : null;
-		Boolean specialVehicle = "tak".equals(map.get("specialVehicle")) ? true : false;
+		
+		Validator.validateBoolean(map.get("specialVehicle"));
+		Boolean specialVehicle;
+		if("tak".equals(map.get("specialVehicle"))){
+			specialVehicle =  true;
+		} else if("nie".equals(map.get("specialVehicle"))){
+			specialVehicle = false;
+		} else {
+			specialVehicle = null;
+		}
 		String vehicleTheft = map.get("vehicleTheft");
 		if (vehicleTheft != null) {
 			Validator.validateDate(vehicleTheft);
